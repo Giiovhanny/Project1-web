@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block body %}
+    <h1>Matched Books</h1>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Gio Library</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home</a></li>
+      <li><a href="/">Log out</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="home/{{book.isbn }}">
+                    {{ book.isbn }} {{ book.title }} {{ book.author }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <a href="home"> Back </a>
+
+{% endblock %}

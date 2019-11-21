@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flights
+{% endblock %}
+
+{% block body %}
+    <h1>Search your Book </h1>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">Gio Library</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/home">Home</a></li>
+      <li><a href="/">Log out</a></li>
+
+    </ul>
+  </div>
+</nav>
+      <form action="" method="post">
+    <div class="form-group">
+           <select class="form-control" name="value">
+                   <option value="isbn"> ISBN</option>
+                   <option value="title"> Title</option>
+                   <option value="author"> Author</option>
+           </select>
+       </div>
+
+
+
+
+        <div class="form-group">
+            <input class="form-control" name="value2" placeholder="Author">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">Search</button>
+        </div>
+
+    </form>
+{% endblock %}

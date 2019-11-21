@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book
+{% endblock %}
+
+{% block body %}
+    <h1>Book Details</h1>
+
+    <div class="container">
+    <ul>
+        <li>ISBN: {{ book.isbn }}</li>
+        <li>Title: {{book.title }}</li>
+        <li>Author: {{book.author}}</li>
+        <li>Year: {{book.year}}</li>
+        <li>Average Rate: {{res.books[0].average_rating}}</li>
+        <li>Work Ratings Count: {{res.books[0].work_ratings_count}}</li>
+        <li>Work Reviews Count: {{res.books[0].work_reviews_count}}</li>
+    </ul>
+
+      <h1>Rate the book</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Rate 1-5" name="rate" value="{{
+          request.form.rate }}">
+         <input type="text" placeholder="review" name="review" value="{{
+          request.form.review }}">
+        <input class="btn btn-default" type="Submit" value="Send">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+        <a href="/home"> Back </a>
+
+{% endblock %}
